@@ -23,6 +23,28 @@ vim.keymap.set({ "n", "t" }, "<leader>ao", function()
   })
 end, { desc = "Toggle Codex (right side)" })
 
+vim.keymap.set({ "n", "t" }, "<leader>ac", function()
+  if vim.fn.executable("copilot") ~= 1 then
+    vim.notify("Copilot CLI was not found in PATH", vim.log.levels.ERROR)
+    return
+  end
+
+  Snacks.terminal({ "copilot" }, {
+    cwd = LazyVim.root(),
+    count = 1,
+    interactive = true,
+    win = {
+      style = "terminal",
+      position = "right",
+      width = 0.4,
+      height = 0,
+      enter = true,
+      backdrop = false,
+      wo = { winbar = " Copilot " },
+    },
+  })
+end, { desc = "Toggle Copilot CLI (right side)" })
+
 vim.keymap.set("n", "s", "s", { noremap = true })
 vim.keymap.set("n", "S", "S", { noremap = true })
 vim.keymap.set("v", "s", "s", { noremap = true })

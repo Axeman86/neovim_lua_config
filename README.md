@@ -7,7 +7,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 - Neovim python client `pip3 install pynvim` or `pip3 install --upgrade pynvim`
 - Neovim ruby client `gem install neovim`
 
-## add Codex AI
+## add Codex_cli AI
 
 - install `curl -fsSL https://chatgpt.com/codex/install.sh | sh`
 - input API key number when selected Provide your own API key
@@ -24,3 +24,7 @@ plan_mode_reasoning_effort = "xhigh"
 allowed_approvals_reviewers = ["auto_review"]
 approvals_reviewer = "auto_review"
 ```
+
+## add Copilot_cli AI
+
+- install `curl -fsSL https://gh.io/copilot-install | bash`
