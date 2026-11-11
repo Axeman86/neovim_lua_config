@@ -3,8 +3,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
-      local host_ws = (os.getenv("HOME") or "/home/axeman") .. "/Workspace/qyun_ws"
-      local container_ws = "/home/qyun/qyun_ws"
+      local host_ws = (os.getenv("HOME") or "/home/axeman") .. "/Workspace"
+      local container_ws = "/workspace"
       local clangd = opts.servers.clangd
       local host_cmd = vim.deepcopy(clangd.cmd or { "clangd" })
 
@@ -20,7 +20,7 @@ return {
             "-i",
             "-w",
             container_ws,
-            "qyun_env_iron",
+            "qyun_env_cross",
             "clangd",
             "--background-index",
             "--path-mappings=" .. host_ws .. "=" .. container_ws,
